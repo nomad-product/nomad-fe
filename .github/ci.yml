@@ -1,0 +1,16 @@
+name: NOMAD-FE CI
+on:
+  - push
+  - pull_request
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.1
+          cache: pnpm
+      - run: pnpm install
+      - run: pnpm run build
+      - run: pnpm run test
