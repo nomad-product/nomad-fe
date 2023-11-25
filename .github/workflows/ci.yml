@@ -1,5 +1,5 @@
 name: NOMAD-FE CI
-on: [push pull_request]
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,6 +10,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
+
           node-version: 18.12.1
           cache: pnpm
 
