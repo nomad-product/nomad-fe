@@ -12,5 +12,8 @@ jobs:
           node-version: 18.12.1
           cache: pnpm
       - run: pnpm install
+      - run: pnpm run tsc
+      - run: pnpm run lint
+      - run: pnpm run lint:css
       - run: pnpm run build
       - run: pnpm run test
