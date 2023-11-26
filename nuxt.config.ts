@@ -2,12 +2,14 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  srcDir: 'src',
   typescript: {
     typeCheck: true,
     strict: true,
   },
   alias: {
-    assets: '/assets',
+    '@': '/src',
+    assets: '/src/assets',
   },
   app: {
     head: {
