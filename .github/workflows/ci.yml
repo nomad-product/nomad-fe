@@ -1,0 +1,22 @@
+name: NOMAD-FE CI
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.10.5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.12.1
+          cache: pnpm
+
+      - name: Run CI
+        run: pnpm install && pnpm run tsc && pnpm run lint && pnpm run stylelint && pnpm run test
