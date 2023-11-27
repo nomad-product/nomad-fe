@@ -3,6 +3,14 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "verbatimModuleSyntax": false,
-    "types": ["jest"]
+    "types": ["jest"],
+    "paths": {
+      "@": [
+        "./src/"
+      ],
+      "assets": [
+        "./src/assets"
+      ],
+    }
   },
 }

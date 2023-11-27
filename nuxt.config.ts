@@ -6,10 +6,10 @@ export default defineNuxtConfig({
     typeCheck: true,
     strict: true,
   },
-  srcDir: 'src',
+  srcDir: '/src',
   alias: {
-    '@': '/',
-    assets: '/assets',
+    '@': '/<rootDir>',
+    assets: '/<rootDir>/assets',
   },
   app: {
     head: {
