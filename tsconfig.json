@@ -4,13 +4,5 @@
   "compilerOptions": {
     "verbatimModuleSyntax": false,
     "types": ["jest"],
-    "paths": {
-      "@": [
-        "./src/"
-      ],
-      "assets": [
-        "./src/assets"
-      ],
-    }
   },
 }

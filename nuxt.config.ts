@@ -6,11 +6,7 @@ export default defineNuxtConfig({
     typeCheck: true,
     strict: true,
   },
-  srcDir: '/src',
-  alias: {
-    '@': '/<rootDir>',
-    assets: '/<rootDir>/assets',
-  },
+  srcDir: 'src',
   app: {
     head: {
       charset: 'utf-8',
