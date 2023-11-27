@@ -1,4 +1,4 @@
-<script setup></script>
+<script lang="ts" setup></script>
 
 <template>
   <div class="main">
@@ -6,9 +6,8 @@
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .main {
-  min-width: 100%;
   margin: 0 120px;
 
   @media screen and (max-width: 768px) {
