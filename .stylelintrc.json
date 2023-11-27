@@ -1,6 +1,25 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-recommended-vue"
-  ]
+    "stylelint-config-recommended-vue",
+    "stylelint-config-standard-scss"
+  ],
+  "plugins": [
+      "stylelint-scss"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.(scss|css|html|vue)"
+      ],
+      "customSyntax": "postcss-scss"
+    },
+    {
+      "files": ["**/*.(html|vue)"],
+      "customSyntax": "postcss-html"
+    }
+  ],
+  "rules": {
+    "media-feature-range-notation": "prefix"
+  }
 }
