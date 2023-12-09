@@ -1,12 +1,17 @@
 <script lang="ts" setup>
+import { useRoute } from 'vue-router';
+
 interface RegionResponse {
   id: number;
   name: string;
   description: string;
   mainImage: string;
 }
+
+const route = useRoute();
+
 const { data: region } = await useFetch<RegionResponse>(
-  'http://localhost:8080/api/v1/regions/1',
+  `http://localhost:8080/api/v1/regions/${route.params.id}`,
 );
 </script>
 
