@@ -15,6 +15,7 @@ const { data: regions } = await useFetch<RegionResponse[]>(
     <div class="region-cards">
       <NuxtLink
         v-for="region in regions"
+        :key="region.id"
         :style="{ backgroundImage: `url(${region.thumbnailImage})` }"
         :to="`/regions/${region.id}`"
         class="region-card"
