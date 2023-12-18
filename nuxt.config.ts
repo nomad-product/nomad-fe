@@ -14,4 +14,9 @@ export default defineNuxtConfig({
     },
   },
   css: ['assets/styles/reset.scss'],
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL,
+    },
+  },
 });

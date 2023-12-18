@@ -5,8 +5,11 @@ interface RegionResponse {
   description: string;
   mainImage: string;
 }
+
+const runtimeConfig = useRuntimeConfig();
+
 const { data: region } = await useFetch<RegionResponse>(
-  'http://localhost:8080/api/v1/regions/1',
+  `${runtimeConfig.public.apiBaseUrl}/api/v1/regions/1`,
 );
 </script>
 
