@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useRoute } from 'vue-router';
+
 interface RegionResponse {
   id: number;
   name: string;
@@ -6,10 +8,11 @@ interface RegionResponse {
   mainImage: string;
 }
 
+const route = useRoute();
 const runtimeConfig = useRuntimeConfig();
 
 const { data: region } = await useFetch<RegionResponse>(
-  `${runtimeConfig.public.apiBaseUrl}/api/v1/regions/1`,
+  `${runtimeConfig.public.apiBaseUrl}/api/v1/regions/${route.params.id}`,
 );
 </script>
 
