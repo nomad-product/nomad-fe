@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
-import Display from '~/components/text/Display.vue';
-import Body1 from '~/components/text/Body1.vue';
+import Display from '@/components/text/Display.vue';
+import Body1 from '@/components/text/Body1.vue';
 
 interface RegionResponse {
   id: number;

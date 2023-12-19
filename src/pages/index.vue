@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import Headline1 from '~/components/text/Headline1.vue';
-import Headline2 from '~/components/text/Headline2.vue';
+import Headline1 from '@/components/text/Headline1.vue';
+import Headline2 from '@/components/text/Headline2.vue';
 
 interface RegionResponse {
   id: number;
