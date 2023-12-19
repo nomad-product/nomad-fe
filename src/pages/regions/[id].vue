@@ -1,5 +1,7 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
+import Display from '~/components/text/Display.vue';
+import Body1 from '~/components/text/Body1.vue';
 
 interface RegionResponse {
   id: number;
@@ -23,10 +25,10 @@ const { data: region } = await useFetch<RegionResponse>(
         <img :src="region?.mainImage" alt="지역 사진" />
       </div>
       <div class="info">
-        <h1 class="title">{{ region?.name }}</h1>
-        <p class="description">
+        <Display class="name">{{ region?.name }}</Display>
+        <Body1 class="description">
           {{ region?.description }}
-        </p>
+        </Body1>
       </div>
     </div>
   </div>
@@ -64,20 +66,8 @@ const { data: region } = await useFetch<RegionResponse>(
       gap: 20px;
       flex-direction: column;
 
-      .title {
-        color: $color-text-primary;
-        font-size: 40px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-      }
-
       .description {
-        color: #9e9e9e;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 160%;
+        color: $color-gray-500;
       }
     }
   }

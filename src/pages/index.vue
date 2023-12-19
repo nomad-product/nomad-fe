@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import Headline1 from '~/components/text/Headline1.vue';
+import Headline2 from '~/components/text/Headline2.vue';
+
 interface RegionResponse {
   id: number;
   name: string;
@@ -11,7 +14,7 @@ const { data: regions } = await useFetch<RegionResponse[]>(
 
 <template>
   <div class="index-wrapper">
-    <h1>✨ 이런 곳에서 일해보면 어때요?</h1>
+    <Headline1>✨ 이런 곳에서 일해보면 어때요?</Headline1>
     <div class="region-cards">
       <NuxtLink
         v-for="region in regions"
@@ -20,7 +23,7 @@ const { data: regions } = await useFetch<RegionResponse[]>(
         :to="`/regions/${region.id}`"
         class="region-card"
       >
-        <h2 class="title">{{ region.name }}</h2>
+        <Headline2 class="name">{{ region.name }}</Headline2>
       </NuxtLink>
     </div>
   </div>
@@ -67,7 +70,8 @@ const { data: regions } = await useFetch<RegionResponse[]>(
       }
     }
 
-    .title {
+    .name {
+      color: $white;
       padding: 16px;
       margin: 0;
     }
