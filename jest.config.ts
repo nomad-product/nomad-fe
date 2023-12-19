@@ -12,6 +12,9 @@ const config: Config.InitialOptions = {
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue',
   ],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
   testEnvironment: 'jsdom',
   verbose: true,
   testEnvironmentOptions: {
