@@ -18,6 +18,15 @@ export default defineNuxtConfig({
     'assets/styles/fonts.scss',
     'assets/styles/global.scss',
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "./assets/styles/variables.scss" as *;',
+        },
+      },
+    },
+  },
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_BASE_URL,

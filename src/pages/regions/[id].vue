@@ -65,7 +65,7 @@ const { data: region } = await useFetch<RegionResponse>(
       flex-direction: column;
 
       .title {
-        color: #222;
+        color: $color-text-primary;
         font-size: 40px;
         font-style: normal;
         font-weight: 700;
