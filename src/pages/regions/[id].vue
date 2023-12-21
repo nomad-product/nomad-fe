@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router';
 import Display from '@/components/text/Display.vue';
 import Body1 from '@/components/text/Body1.vue';
+import Tabs from '~/components/tab/Tabs.vue';
 
 interface RegionResponse {
   id: number;
@@ -19,18 +20,21 @@ const { data: region } = await useFetch<RegionResponse>(
 </script>
 
 <template>
-  <div class="regions-show">
-    <div class="region-detail">
-      <div class="image-wrapper">
-        <img :src="region?.mainImage" alt="지역 사진" />
-      </div>
-      <div class="info">
-        <Display class="name">{{ region?.name }}</Display>
-        <Body1 class="description">
-          {{ region?.description }}
-        </Body1>
+  <div>
+    <div class="regions-show">
+      <div class="region-detail">
+        <div class="image-wrapper">
+          <img :src="region?.mainImage" alt="지역 사진" />
+        </div>
+        <div class="info">
+          <Display class="name">{{ region?.name }}</Display>
+          <Body1 class="description">
+            {{ region?.description }}
+          </Body1>
+        </div>
       </div>
     </div>
+    <Tabs :tabs="[{ label: '이용 리뷰' }]"></Tabs>
   </div>
 </template>
 
