@@ -1,4 +1,4 @@
-name: NOMAD-FE CI
+name: NOMAD-FE CHROMATIC
 on: [pull_request]
 jobs:
   build:
