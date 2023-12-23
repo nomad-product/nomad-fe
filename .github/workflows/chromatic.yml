@@ -1,11 +1,14 @@
 name: NOMAD-FE CHROMATIC
 on: [pull_request]
+
 jobs:
-  build:
+  chromatic:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
@@ -18,7 +21,10 @@ jobs:
           node-version: 18.12.1
           cache: pnpm
 
-      - name: Chromatic
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Publish to Chromatic
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
