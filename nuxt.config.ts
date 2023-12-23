@@ -32,4 +32,9 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.API_BASE_URL,
     },
   },
+  modules: ['@nuxtjs/storybook'],
+  storybook: {
+    url: 'http://localhost:6006',
+    port: 6006,
+  },
 });
