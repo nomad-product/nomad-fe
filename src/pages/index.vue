@@ -7,8 +7,11 @@ interface RegionResponse {
   name: string;
   thumbnailImage: string;
 }
+
+const runtimeConfig = useRuntimeConfig();
+
 const { data: regions } = await useFetch<RegionResponse[]>(
-  'http://localhost:8080/api/v1/regions',
+  `${runtimeConfig.public.apiBaseUrl}/api/v1/regions`,
 );
 </script>
 
@@ -71,7 +74,7 @@ const { data: regions } = await useFetch<RegionResponse[]>(
     }
 
     .name {
-      color: $white;
+      color: $color-white;
       padding: 16px;
       margin: 0;
     }
